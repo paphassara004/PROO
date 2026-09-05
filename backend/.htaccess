@@ -1,0 +1,10 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Deny direct access to config files if someone tries to hit them with unexpected extensions
+<FilesMatch "\.(sql)$">
+    Require all denied
+</FilesMatch>
